@@ -1,10 +1,10 @@
 {
-  "name": "first-electorn-app",
+  "name": "first-electron-app",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron --inspect=8585 ."
   },
   "author": "pjqdyd",
   "license": "ISC",

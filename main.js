@@ -1,5 +1,5 @@
 
-//引入electron模块
+//主进程,引入electron模块
 //app管理应用的生命周期
 //BrowserWindow管理窗口
 const { app, BrowserWindow } = require('electron');
@@ -14,7 +14,8 @@ function createWindow() {
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            webviewTag: true
         }
     })
 
@@ -31,8 +32,6 @@ function createWindow() {
         // 与此同时，你应该删除相应的元素。
         win = null;
     });
-
-
 }
 
 // Electron 会在初始化后并准备
@@ -50,7 +49,7 @@ app.on('window-all-closed', () => {
     }
 });
 
-
+// 窗口被激活
 app.on('activate', () => {
     // 在macOS上，当单击dock图标并且没有其他窗口打开时，
     // 通常在应用程序中重新创建一个窗口。
